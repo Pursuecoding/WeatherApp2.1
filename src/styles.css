@@ -29,3 +29,8 @@ p {
 .descr {
     text-transform: capitalize;
 }
+
+#weather-icon {
+    width: 90px;
+    height: 90px;
+}
