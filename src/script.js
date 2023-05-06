@@ -26,6 +26,7 @@ function displayWeatherConditions(response) {
     document.querySelector("#temp-feels").innerHTML = Math.round(response.data.main.feels_like);
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+    document.querySelector("#weather-icon").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`)
 }
 
 function showCity(event) {
