@@ -55,3 +55,19 @@ function getLocation(event) {
 
 let locationBtn = document.querySelector("#location");
 locationBtn.addEventListener("click", getLocation);
+
+let celcLink = document.querySelector("#celc");
+let fahrLink = document.querySelector("#fahr");
+
+        function calcF() {
+            let degrees = document.querySelector("#degrees");
+            degrees.innerHTML = 66;
+            }
+
+        fahrLink.addEventListener("click", calcF);
+
+        function calcC() {
+            let degrees = document.querySelector("#degrees");
+            degrees.innerHTML = 19;
+        }
+        celcLink.addEventListener("click", calcC);   
