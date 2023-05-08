@@ -72,6 +72,6 @@ let celcTemp = null;
 
         function calcC() {
             let degrees = document.querySelector("#degrees");
-            degrees.innerHTML = response.data.main.temp;
+            degrees.innerHTML = Math.round(celcTemp);
         }
         celcLink.addEventListener("click", calcC);   
