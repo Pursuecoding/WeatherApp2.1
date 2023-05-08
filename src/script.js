@@ -21,7 +21,8 @@ currDate.innerHTML = `${days[weekDay]} ${hours}:${minutes}`;
 function displayWeatherConditions(response) {
     console.log(response.data);
     document.querySelector("#city-result").innerHTML = response.data.name;
-    document.querySelector("#degrees").innerHTML = Math.round(response.data.main.temp);
+    celcTemp = response.data.main.temp;
+    document.querySelector("#degrees").innerHTML = Math.round(celcTemp);
     document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
     document.querySelector("#temp-feels").innerHTML = Math.round(response.data.main.feels_like);
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -58,16 +59,19 @@ locationBtn.addEventListener("click", getLocation);
 
 let celcLink = document.querySelector("#celc");
 let fahrLink = document.querySelector("#fahr");
+let celcTemp = null;
 
-        function calcF() {
-            let degrees = document.querySelector("#degrees");
-            degrees.innerHTML = 66;
+        function calcF(event) {
+            event.preventDefault();
+            let tempElement = document.querySelector("#degrees");
+            let tempF = (celcTemp * 9) / 5 + 32;
+            tempElement.innerHTML = Math.round(tempF);
             }
 
         fahrLink.addEventListener("click", calcF);
 
         function calcC() {
             let degrees = document.querySelector("#degrees");
-            degrees.innerHTML = 19;
+            degrees.innerHTML = response.data.main.temp;
         }
         celcLink.addEventListener("click", calcC);   
