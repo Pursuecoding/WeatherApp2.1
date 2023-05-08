@@ -20,6 +20,7 @@ p {
 }
 
 .container {
+    background: linear-gradient(to right bottom, #a9f1df, #ffbbbb) ;
     border: 1px solid #7e7e7e;
     border-radius: 10px;
     margin-top: 20px;
