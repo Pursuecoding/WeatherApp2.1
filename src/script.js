@@ -57,6 +57,8 @@ function getLocation(event) {
 let locationBtn = document.querySelector("#location");
 locationBtn.addEventListener("click", getLocation);
 
+
+//Unit converter
 let celcLink = document.querySelector("#celc");
 let fahrLink = document.querySelector("#fahr");
 let celcTemp = null;
