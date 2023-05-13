@@ -46,3 +46,12 @@ p {
     color: #7e7e7e;
     cursor: pointer;
 }
+
+.weekly-forecast {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.day-temp-min {
+    opacity: 0.5;
+}
