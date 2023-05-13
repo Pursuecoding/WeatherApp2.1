@@ -16,6 +16,32 @@ if(minutes < 10) {
 
 currDate.innerHTML = `${days[weekDay]} ${hours}:${minutes}`;
 
+//WEEK FORECAST
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Mon", "Tue", "Wed"];
+    days.forEach(function(day) {
+        forecastHTML = 
+        forecastHTML +
+    `
+    <div class="col-2">
+      <div class="forecast-day">${day}
+      </div>
+      <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="icon" width="26">
+      <div class="week-temperatures">
+        <span class="day-temp-max">18&deg;</span>
+        <span class="day-temp-min">12&deg;</span>
+      </div>
+    </div>
+  `;
+    })
+    
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
 
 //CITY SUBMIT
 function displayWeatherConditions(response) {
