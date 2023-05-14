@@ -17,23 +17,24 @@ if(minutes < 10) {
 currDate.innerHTML = `${days[weekDay]} ${hours}:${minutes}`;
 
 function displayForecast(response) {
-    console.log(response);
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-    //let forecast = response.data.daily;
+    
+    //let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+    console.log(response.data.daily);
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
-    days.forEach(function(day) {
+    forecast.forEach(function(forecast) {
         forecastHTML = 
         forecastHTML +
     `
     <div class="col-2">
-      <div class="forecast-day">${day}
+      <div class="forecast-day">${forecast.dt}
       </div>
-      <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="icon" width="26">
+      <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="icon" width="26">
       <div class="week-temperatures">
-        <span class="day-temp-max">18&deg;</span>
-        <span class="day-temp-min">12&deg;</span>
+        <span class="day-temp-max">${forecast.temp.max}&deg;</span>
+        <span class="day-temp-min">${forecast.temp.min}&deg;</span>
       </div>
     </div>
   `;
